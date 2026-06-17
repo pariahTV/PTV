@@ -5,10 +5,11 @@ export default function App({ Component, pageProps }) {
     <>
       <header className="ptv-header">
         <img
-          src="/logos/pariah-tv-logo.PNG"
+          src="/logos/pariah-tv-logo.png"
           alt="PariahTV Logo"
           className="ptv-header-logo"
         />
+        <div className="ptv-live-tag">LIVE 8.5K</div>
       </header>
 
       <Component {...pageProps} />
