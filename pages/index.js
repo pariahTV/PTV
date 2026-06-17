@@ -8,8 +8,9 @@ export default function Home() {
       <section className="ptv-video">
         <img src="/logos/ptv-silhouette.png" alt="PTV Silhouette" className="ptv-video-overlay" />
         <div className="ptv-breaking-news">
-          BREAKING NEWS: PARIAHTV LAUNCHES — JOIN NOW! | STREAM
-        </div>
+  <span>BREAKING NEWS: PARIAHTV IS LIVE — NEW SHOWS DROPPING — STAY LOCKED IN —</span>
+</div>
+
       </section>
 
       <section className="ptv-radio">
