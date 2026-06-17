@@ -9,3 +9,10 @@ export default function Home() {
     </main>
   );
 }
+export default function Home() {
+  return (
+    <main style={{ paddingTop: "90px", textAlign: "center" }}>
+      <h1>PariahTV Viewer</h1>
+    </main>
+  );
+}
