@@ -1,6 +1,8 @@
+// pages/index.js
 import { useEffect, useState } from "react";
 import { db } from "../firebase";
 import { ref, onValue } from "firebase/database";
+import "../styles/globals.css";
 
 export default function Viewer() {
   const [spotlight, setSpotlight] = useState(null);
@@ -14,61 +16,47 @@ export default function Viewer() {
   }, []);
 
   return (
-    <main className="ptv-viewer">
-      <h1>PariahTV Viewer</h1>
+    <main className="viewer">
 
-      {/* Spotlight */}
-      {!spotlight ? (
-        <p>Loading spotlight…</p>
-      ) : (
-        <div className="spotlight">
-          <h2>{spotlight.title}</h2>
-          <p>{spotlight.artist}</p>
-          <p>{spotlight.status}</p>
+      {/* LOGO */}
+      <section className="logo-section">
+        <img src="/logos/pariah-tv-full.PNG" alt="PariahTV Logo" />
+      </section>
+
+      {/* SPOTLIGHT CARD */}
+      <section className="spotlight-card">
+        <h2>Spotlight</h2>
+        <p>{spotlight?.title || "Loading..."}</p>
+        <p>{spotlight?.artist || ""}</p>
+        <p>{spotlight?.status || ""}</p>
+      </section>
+
+      {/* PLAYER */}
+      <section className="player">
+        <h2 className="player-title">Now Playing</h2>
+        <p>{player?.nowPlaying || "Loading..."}</p>
+
+        <div className="progress-bar">
+          <div className="progress-fill"></div>
         </div>
-      )}
 
-      {/* Player */}
-      {!player ? (
-        <p>Loading player…</p>
-      ) : (
-        <div className="player">
-          <p>Now Playing: {player.nowPlaying}</p>
-          <p>Duration: {player.duration}</p>
+        <p style={{ marginTop: "10px", opacity: 0.7 }}>
+          {player?.duration || ""}
+        </p>
+      </section>
+
+      {/* TICKER */}
+      <section className="ticker">
+        <div className="ticker-text">
+          {ticker?.text || "Loading..."}
         </div>
-      )}
+      </section>
 
-      {/* Ticker */}
-      {!ticker ? (
-        <p>Loading ticker…</p>
-      ) : (
-        <div className="ticker">{ticker.text}</div>
-      )}
+      {/* REACTIONS */}
+      <div className="reactions">
+        🎤❤️🔥💯
+      </div>
 
-      {/* Floating Emoji Container */}
-      <div className="ptv-emoji-container"></div>
-
-      {/* Emoji Script */}
-      <script
-        dangerouslySetInnerHTML={{
-          __html: `
-            const container = document.querySelector('.ptv-emoji-container');
-            const emojis = ['🔥','😤','👊🏽','❤️','💯','🎤'];
-
-            function spawnEmoji() {
-              const emoji = document.createElement('div');
-              emoji.className = 'ptv-emoji';
-              emoji.innerText = emojis[Math.floor(Math.random() * emojis.length)];
-              emoji.style.left = Math.random() * 80 + '%';
-              emoji.style.animationDuration = (2 + Math.random() * 2) + 's';
-              container.appendChild(emoji);
-              setTimeout(() => emoji.remove(), 4000);
-            }
-
-            setInterval(spawnEmoji, 800);
-          `
-        }}
-      />
     </main>
   );
 }
