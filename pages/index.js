@@ -5,7 +5,7 @@ export default function Home() {
       {/* VIDEO PLAYER */}
       <section className="ptv-video">
         <div className="ptv-video-overlay-top">
-          <img src="/logos/ptv-silhouette.png" className="ptv-corner-bug" alt="PTV Bug" />
+          <img src="/logos/ptv-silhouette.PNG" className="ptv-corner-bug" alt="PTV Bug" />
           <div className="ptv-live-pill">LIVE</div>
         </div>
 
@@ -75,7 +75,7 @@ export default function Home() {
 
       {/* FOOTER */}
       <footer className="ptv-footer">
-        <img src="/logos/pariah-tv-logo.png" alt="PariahTV Logo" className="ptv-footer-logo" />
+        <img src="/logos/pariah-tv-logo.PNG" alt="PariahTV Logo" className="ptv-footer-logo" />
         <div className="ptv-nav">
           <span>After Dark</span>
           <span>Live Sets</span>
@@ -111,7 +111,7 @@ export default function Home() {
         <div className="ptv-ad-dim"></div>
 
         <div className="ptv-ad-content">
-          <img src="/logos/ptv-silhouette.png" className="ptv-ad-bug" alt="PTV Bug" />
+          <img src="/logos/ptv-silhouette.PNG" className="ptv-ad-bug" alt="PTV Bug" />
           <div className="ptv-ad-banner">AD BREAK</div>
           <div className="ptv-ad-timer">Returning in 00:15</div>
 
