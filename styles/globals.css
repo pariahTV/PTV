@@ -4,8 +4,12 @@ body {
   font-family: system-ui, sans-serif;
 }
 
-.ptv-viewer, .ptv-control {
+.ptv-viewer {
   padding: 20px;
+}
+
+.spotlight, .player, .ticker {
+  margin-bottom: 20px;
 }
 
 .ptv-emoji-container {
